@@ -1,0 +1,57 @@
+## Nim syntax highlight rules for Nano editor
+
+syntax "nim" "\.nim(s|$)"
+header "^#!.*nim"
+magic "Nim script"
+# linter pyflakes
+comment "#"
+
+# Function definitions.
+icolor brightblue "def [0-9A-Z_]+"
+# Keywords.
+color brightcyan "\<(and|as|assert|async|await|break|class|continue)\>"
+color brightcyan "\<(del|elif|else|except|finally|from)\>"
+color brightcyan "\<(global|if|import|is|isnot|lambda|nonlocal|not|or|xor)\>"
+color brightcyan "\<(pass|raise|return|try|with|yield|await|discard)\>"
+# Procedures
+color brightcyan "\<proc [a-zA-Z_0-9]+"
+color brightblue "\<proc "
+# func method macro template
+
+# Nim repeat
+color brightcyan "\<while|for|in\>"
+
+# Channels I/O
+color brightmagenta "\<stdin|stdout|stderr\>"
+
+# color printing (stdout) functions
+color brightcyan "\<(exec|print|echo)([[:space:]]| |$)"
+
+# Special values.
+color magenta "\<(self|none|true|false)\>"
+
+## Nim built-in values
+# numbers
+color magenta "\<int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float|float32|float64\>"
+
+
+# numbers
+icolor brightyellow "\b(([1-9][0-9]+)|0+)\.[0-9]+j?\b" "\b([1-9][0-9]*[Lj]?)\b" "\b0o?[0-7]*L?\b" "\b0x[1-9a-f][0-9a-f]*L?\b" "\b0b[01]+\b"
+
+# Var types
+color cyan "\<(const|var|let)\>"
+
+# Single-quoted strings.
+color brightgreen "'([^'\]|\\.)+'"
+color brightgreen ""([^"\]|\\.)+""
+# Comments.
+color brightred "(^|[[:blank:]])#.*"
+# Triple-quoted strings.
+color brightgreen    start="'''([^'),]|$)" end="(^|[^(\])'''"
+color brightgreen start="\"\"\"([^"),]|$)" end="(^|[^(\])\"\"\""
+
+# Reminders.
+color brightwhite,yellow "(FIXME|TODO|XXX)"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
