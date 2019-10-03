@@ -18,5 +18,5 @@ mkdir ~/.nano
 wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O ~/.nano/nim.nanorc
 
 # System wide installation (Sudo or root access is required)
-wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O ~/usr/share/nano/nim.nanorc
+wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O /usr/share/nano/nim.nanorc
 ```
