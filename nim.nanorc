@@ -1,4 +1,6 @@
 ## Nim syntax highlight rules for Nano editor
+# Author: Oples
+# License: GPL-3.0
 
 syntax "nim" "\.nim(s|$)"
 header "^#!.*nim"

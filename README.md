@@ -3,16 +3,15 @@ A Nano syntax hightlight for Nim
 
 ## This is a Work In Progress
 TODO:
- - Install script local/system wide
- - update all Nim var types
- - color correction
- 
+ - [ ] update all Nim var types
+ - [ ] color correction
+
 # Installation
 to make use of this file\
 simply download and place the file in the local ~/.nano/ directory for **single user** configuration
 ```bash
 # (for current user only)
-# Ceate the directory in case it doesn't exist
+# Create the directory in case it doesn't exist
 mkdir ~/.nano
 # Download and place file
 wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O ~/.nano/nim.nanorc
@@ -20,3 +19,6 @@ wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O ~/.
 # System wide installation (Sudo or root access is required)
 wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O /usr/share/nano/nim.nanorc
 ```
+# Still doubting?
+here's an example of the highlighted syntax<br/><br/>
+![screenshot_example1.png](screenshot_example1.png)
