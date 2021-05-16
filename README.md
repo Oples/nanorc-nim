@@ -1,10 +1,5 @@
 # Nanorc for Nim
-A Nano syntax hightlight for Nim
-
-## This is a Work In Progress
-TODO:
- - [ ] update all Nim var types
- - [ ] color correction
+A Nano editor syntax hightlight for the Nim programming language
 
 ## Installation
 to make use of this file\
@@ -23,7 +18,5 @@ wget https://raw.githubusercontent.com/oples/nanorc-nim/master/nim.nanorc -O /us
 here's an example of the highlighted syntax<br/><br/>
 ![screenshot_example1.png](screenshot_example1.png)
 
-
-# TODO/Known bugs
-- add multi-line comments
-- fix multi-line strings are colored on commented line
+## Info
+Pull requests and issues are welcomed!

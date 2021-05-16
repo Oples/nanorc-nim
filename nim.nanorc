@@ -17,6 +17,8 @@ color brightcyan "\<(pass|raise|return|try|with|yield|await|discard)\>"
 # Procedures
 color brightcyan "\<(proc [a-zA-Z_0-9]+)\>"
 color brightblue "\<(proc )"
+# When statement
+color brightblue "\<(when )"
 # method
 color brightcyan "\<(method [a-zA-Z_0-9]+)\>"
 color brightblue "\<(method )"
@@ -61,6 +63,10 @@ color brightred "(^|[[:blank:]])#.*"
 # Triple-quoted strings.
 color brightgreen   start="'''([^'),]|$)" end="(^|[^(\])'''"
 color brightgreen   start="\"\"\"([^"),]|$)" end="(^|[^(\])\"\"\""
+
+# multiline-comment.
+color brightred   start="#\[([^#),]|$)" end="(^|[^(\])\]#"
+color brightred   start="##[([^"),]|$)" end="(^|[^(\])\]##"
 
 # Reminders.
 color brightwhite,red "(FIXME|ERROR)"
