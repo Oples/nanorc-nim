@@ -1,53 +1,52 @@
 ## Nim syntax highlight rules for Nano editor
 # Author: Oples
+# Modified by: Chronos
 # License: GPL-3.0
 
-syntax "nim" "\.nim(s|$)"
+syntax "nim" "\.nim((s|$)|(ble|$))"
 header "^#!.*nim"
 magic "Nim script"
-# linter pyflakes
-comment "#"
 
 
 # Keywords.
-color brightcyan "\<(and|as|assert|async|await|break|class|continue)\>"
-color brightcyan "\<(del|elif|else|except|finally|from)\>"
+color brightcyan "\<(and|as|assert|async|asyncCheck|await|break|continue|inc|dec)\>"
+color brightcyan "\<(discard|if|elif|else|case|of|except|finally|from)\>"
 color brightcyan "\<(global|if|import|is|isnot|lambda|nonlocal|not|or|xor)\>"
 color brightcyan "\<(pass|raise|return|try|with|yield|await|discard)\>"
-# Procedures
-color brightcyan "\<(proc [a-zA-Z_0-9]+)\>"
-color brightblue "\<(proc )"
+
+# Functions, Procedures, Templates, Macros and Methods
+color brightcyan "\<((func|proc|template|macro|method) [a-zA-Z_0-9]?+)\>"
+color brightblue "\<(func|proc|template|macro|method)\>"
+
 # When statement
-color brightblue "\<(when )"
-# method
-color brightcyan "\<(method [a-zA-Z_0-9]+)\>"
-color brightblue "\<(method )"
+color brightblue "\<(when)"
+
 # type
-#color brightcyan "(^[ ]*type [a-zA-Z_0-9]+)"
+color brightcyan "(^[ ]*type [a-zA-Z_0-9]+)"
 color brightblue "(^[ ]*type([ ]+|$))"
 
 # proc firm
 color brightyellow "(\{\.[a-zA-Z_0-9]+\.\})"
 
 # Nim repeat
-color brightcyan "\<(while|for|in)\>"
+color brightcyan "\<(while|for|in|notin)\>"
 
 # Channels I/O
 color brightmagenta "\<(stdin|stdout|stderr)\>"
 
 # color printing (stdout) functions
-color brightcyan "\<(exec|print|echo)([[:space:]]| |$)"
+color brightcyan "\<(echo)([[:space:]]| |$)"
 
 # Special values.
 color brightmagenta "\<(self|none|true|false)\>"
 
 ## Nim built-in values
 # numbers
-color brightmagenta "\<(int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float|float32|float64)\>"
+color brightmagenta "\<(byte|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float|float32|float64)\>"
 # object
-color brightmagenta "\<(ref|ptr|object)\>"
+color brightmagenta "\<(ref|ptr|distinct|object|enum|RootObj)\>"
 # misc.
-color brightmagenta "\<(string|cstring|bool|tuple|seq|char)\>"
+color brightmagenta "\<(string|cstring|char|bool|tuple|seq|openArray)\>"
 
 # numbers
 icolor brightyellow "\b(([1-9][0-9]+)|0+)\.[0-9]+j?\b" "\b([1-9][0-9]*[Lj]?)\b" "\b0o?[0-7]*L?\b" "\b0x[1-9a-f][0-9a-f]*L?\b" "\b0b[01]+\b"
@@ -56,13 +55,13 @@ icolor brightyellow "\b(([1-9][0-9]+)|0+)\.[0-9]+j?\b" "\b([1-9][0-9]*[Lj]?)\b" 
 color brightblue "\<(const|var|let)\>"
 
 # Single-quoted strings.
-color brightgreen "'([^'\]|\\.)+'"
-color brightgreen ""([^"\]|\\.)+""
+color brightgreen "'([^'\]|\\.)*'|"([^"\]|\\.)*"|'''|""""
+color normal "'''|\"\"\""
 # Comments.
 color brightred "(^|[[:blank:]])#.*"
 # Triple-quoted strings.
-color brightgreen   start="'''([^'),]|$)" end="(^|[^(\])'''"
-color brightgreen   start="\"\"\"([^"),]|$)" end="(^|[^(\])\"\"\""
+color brightgreen "\"\"\"\"\"\""
+color brightgreen start=""""([^"),]|$)" end="(^|[^(\])""""
 
 # multiline-comment.
 color brightred   start="#\[([^#),]|$)" end="(^|[^(\])\]#"
