@@ -1,6 +1,5 @@
 ## Nim syntax highlight rules for Nano editor
 # Author: Oples
-# Modified by: Chronos
 # License: GPL-3.0
 
 syntax "nim" "\.nim((s|$)|(ble|$))"
