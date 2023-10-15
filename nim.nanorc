@@ -56,11 +56,13 @@ color brightblue "\<(const|var|let)\>"
 # Single-quoted strings.
 color brightgreen "'([^'\]|\\.)*'|"([^"\]|\\.)*"|'''|""""
 color normal "'''|\"\"\""
-# Comments.
-color brightred "(^|[[:blank:]])#.*"
+
 # Triple-quoted strings.
 color brightgreen "\"\"\"\"\"\""
 color brightgreen start=""""([^"),]|$)" end="(^|[^(\])""""
+
+# Comments.
+color brightred "(^|[[:blank:]])#.*"
 
 # multiline-comment.
 color brightred   start="#\[([^#),]|$)" end="(^|[^(\])\]#"
