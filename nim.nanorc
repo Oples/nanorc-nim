@@ -14,8 +14,8 @@ color brightcyan "\<(global|if|import|is|isnot|lambda|nonlocal|not|or|xor)\>"
 color brightcyan "\<(pass|raise|return|try|with|yield|await|discard)\>"
 
 # Functions, Procedures, Templates, Macros and Methods
-color brightcyan "\<((func|proc|template|macro|method) [a-zA-Z_0-9]?+)\>"
-color brightblue "\<(func|proc|template|macro|method)\>"
+color brightcyan "\<((func|proc|template|macro|method|iterator) [a-zA-Z_0-9]?+)\>"
+color brightblue "\<(func|proc|template|macro|method|iterator)\>"
 
 # When statement
 color brightblue "\<(when)"
